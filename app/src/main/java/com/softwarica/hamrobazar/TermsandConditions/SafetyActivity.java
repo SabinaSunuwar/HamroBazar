@@ -18,11 +18,10 @@ public class SafetyActivity extends AppCompatActivity {
 
         webView = findViewById(R.id.webView);
 
-        webView.loadUrl("https://hamrobazaar.com/postrules.html");
 
 
 
-//        webView.loadUrl("https://hamrobazaar.com/safetytips.php?nohead=1");
+        webView.loadUrl("https://hamrobazaar.com/m/safetytips.php");
 
     }
 }
