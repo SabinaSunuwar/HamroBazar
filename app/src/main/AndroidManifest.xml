@@ -14,18 +14,18 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".DashboardActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".TermsandConditions.PostingActivity" />
         <activity android:name=".TermsandConditions.SafetyActivity" />
         <activity android:name=".TermsandConditions.TermsActivity" />
         <activity android:name=".TermsAndConditionActivity" />
         <activity android:name=".SplashScreenActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
     </application>
