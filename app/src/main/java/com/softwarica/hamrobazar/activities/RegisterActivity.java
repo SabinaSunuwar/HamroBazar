@@ -1,4 +1,4 @@
-package com.softwarica.hamrobazar;
+package com.softwarica.hamrobazar.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.softwarica.hamrobazar.R;
 
 public class RegisterActivity extends AppCompatActivity {
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:orientation="vertical"
-    tools:context=".DashboardActivity">
+    tools:context=".activities.DashboardActivity">
 
 
     <androidx.viewpager.widget.ViewPager

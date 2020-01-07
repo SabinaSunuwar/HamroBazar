@@ -1,4 +1,4 @@
-package com.softwarica.hamrobazar;
+package com.softwarica.hamrobazar.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import com.softwarica.hamrobazar.R;
 import com.softwarica.hamrobazar.termsandconditions.PostingActivity;
 import com.softwarica.hamrobazar.termsandconditions.SafetyActivity;
 import com.softwarica.hamrobazar.termsandconditions.TermsActivity;

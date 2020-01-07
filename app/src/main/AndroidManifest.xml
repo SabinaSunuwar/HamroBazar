@@ -12,12 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".PopularActivity"></activity>
-        <activity android:name=".PopularActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".ViewPagerActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".DashboardActivity">
+        <activity android:name=".activities.PopularActivity"></activity>
+        <activity android:name=".activities.PopularActivity" />
+        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name=".activities.ViewPagerActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.DashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,9 +27,9 @@
         <activity android:name=".termsandconditions.PostingActivity" />
         <activity android:name=".termsandconditions.SafetyActivity" />
         <activity android:name=".termsandconditions.TermsActivity" />
-        <activity android:name=".TermsAndConditionActivity" />
-        <activity android:name=".SplashScreenActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activities.TermsAndConditionActivity" />
+        <activity android:name=".activities.SplashScreenActivity" />
+        <activity android:name=".activities.MainActivity" />
     </application>
 
 </manifest>

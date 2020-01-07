@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="#E9E5E5"
     android:orientation="vertical"
-    tools:context=".RegisterActivity">
+    tools:context=".activities.RegisterActivity">
 
     <LinearLayout
         android:id="@+id/sliderDotsPanel"

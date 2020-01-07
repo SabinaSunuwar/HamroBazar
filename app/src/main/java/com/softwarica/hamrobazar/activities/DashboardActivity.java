@@ -1,4 +1,4 @@
-package com.softwarica.hamrobazar;
+package com.softwarica.hamrobazar.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -7,11 +7,11 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.softwarica.hamrobazar.R;
 import com.softwarica.hamrobazar.adapter.imgSliderAdapter;
 
 public class DashboardActivity extends AppCompatActivity {
