@@ -18,6 +18,9 @@ public class DashboardActivity extends AppCompatActivity {
     private int dotscount;
     private ImageView[] dots;
 
+    public DashboardActivity(){}
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

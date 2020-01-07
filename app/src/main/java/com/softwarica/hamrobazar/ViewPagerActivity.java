@@ -8,7 +8,7 @@ import android.os.Bundle;
 import com.softwarica.hamrobazar.adapter.ViewPagerAdapter;
 import com.softwarica.hamrobazar.fragments.LoginFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class ViewPagerActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
 
@@ -16,15 +16,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_view_pager);
 
         viewPager = findViewById(R.id.viewPager);
 
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPagerAdapter.addFragment(new LoginFragment());
 
-        adapter.addFragment(new LoginFragment());
-
-        viewPager.setAdapter(adapter);
+        viewPager.setAdapter(viewPagerAdapter);
 
     }
 }
