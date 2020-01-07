@@ -67,7 +67,7 @@
         app:srcCompat="@drawable/ic_account_box_black_24dp" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imgLogin"
         android:layout_width="35dp"
         android:layout_height="40dp"
         android:layout_marginTop="11dp"
