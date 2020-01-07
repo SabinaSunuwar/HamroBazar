@@ -55,7 +55,7 @@
         app:srcCompat="@drawable/ic_menu_black_24dp" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imgLogin"
         android:layout_width="44dp"
         android:layout_height="41dp"
         android:layout_marginStart="16dp"
@@ -67,13 +67,13 @@
         app:srcCompat="@drawable/ic_account_box_black_24dp" />
 
     <ImageView
-        android:id="@+id/imgLogin"
+        android:id="@+id/imgVer"
         android:layout_width="35dp"
         android:layout_height="40dp"
         android:layout_marginTop="11dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.81"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toEndOf="@+id/imgLogin"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_more_vert_black_24dp" />
 
