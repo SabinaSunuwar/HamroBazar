@@ -1,6 +1,5 @@
 package com.softwarica.hamrobazar;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,9 +9,9 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
-import com.softwarica.hamrobazar.TermsandConditions.PostingActivity;
-import com.softwarica.hamrobazar.TermsandConditions.SafetyActivity;
-import com.softwarica.hamrobazar.TermsandConditions.TermsActivity;
+import com.softwarica.hamrobazar.termsandconditions.PostingActivity;
+import com.softwarica.hamrobazar.termsandconditions.SafetyActivity;
+import com.softwarica.hamrobazar.termsandconditions.TermsActivity;
 
 public class TermsAndConditionActivity extends AppCompatActivity {
 

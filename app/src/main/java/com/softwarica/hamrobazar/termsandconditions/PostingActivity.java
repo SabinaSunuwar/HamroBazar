@@ -1,4 +1,4 @@
-package com.softwarica.hamrobazar.TermsandConditions;
+package com.softwarica.hamrobazar.termsandconditions;
 
 import androidx.appcompat.app.AppCompatActivity;
 

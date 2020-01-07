@@ -1,4 +1,4 @@
-package com.softwarica.hamrobazar.TermsandConditions;
+package com.softwarica.hamrobazar.termsandconditions;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,18 +7,21 @@ import android.webkit.WebView;
 
 import com.softwarica.hamrobazar.R;
 
-public class TermsActivity extends AppCompatActivity {
+public class SafetyActivity extends AppCompatActivity {
 
     private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_terms);
+        setContentView(R.layout.activity_safety);
 
         webView = findViewById(R.id.webView);
 
 
-        webView.loadUrl("https://hamrobazaar.com/terms.html");
+
+
+        webView.loadUrl("https://hamrobazaar.com/m/safetytips.php");
+
     }
 }
