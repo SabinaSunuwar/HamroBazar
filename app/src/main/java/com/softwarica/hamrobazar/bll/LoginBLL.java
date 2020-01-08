@@ -1,7 +1,7 @@
 package com.softwarica.hamrobazar.bll;
 
 import com.softwarica.hamrobazar.api.UsersAPI;
-import com.softwarica.hamrobazar.serverresponse.SignUpResponse;
+import com.softwarica.hamrobazar.serverresponse.RegisterResponse;
 import com.softwarica.hamrobazar.url.Url;
 
 import java.io.IOException;
@@ -13,13 +13,13 @@ public class LoginBLL {
 
     boolean isSuccess = false;
 
-    public boolean checkUser(String username, String password) {
+    public boolean checkUser(String email, String password) {
 
         UsersAPI usersAPI = Url.getInstance().create(UsersAPI.class);
-        Call<SignUpResponse> usersCall = usersAPI.checkUser(username, password);
+        Call<RegisterResponse> usersCall = usersAPI.checkUser(email, password);
 
         try {
-            Response<SignUpResponse> loginResponse = usersCall.execute();
+            Response<RegisterResponse> loginResponse = usersCall.execute();
             if (loginResponse.isSuccessful() &&
                     loginResponse.body().getStatus().equals("Login success!")) {
 

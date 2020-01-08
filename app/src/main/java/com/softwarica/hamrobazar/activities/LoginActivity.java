@@ -46,13 +46,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
         private void login() {
-            String username = etEmail.getText().toString();
+            String email = etEmail.getText().toString();
             String password = etPassword.getText().toString();
 
             LoginBLL loginBLL = new LoginBLL();
 
             StrictModeClass.StrictMode();
-            if (loginBLL.checkUser(username, password)) {
+            if (loginBLL.checkUser(email, password)) {
                 Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                 startActivity(intent);
                 finish();

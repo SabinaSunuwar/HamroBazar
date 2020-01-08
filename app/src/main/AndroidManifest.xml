@@ -3,6 +3,10 @@
     package="com.softwarica.hamrobazar">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -11,9 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true">
         <activity android:name=".activities.PopularActivity"></activity>
-        <activity android:name=".activities.PopularActivity" />
         <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.ViewPagerActivity" />
         <activity android:name=".activities.LoginActivity" />

@@ -3,7 +3,7 @@ package com.softwarica.hamrobazar.model;
 public class User {
 
     private String email;
-    private String fullName;
+    private String fullname;
     private String password;
     private String conPassword;
     private String phone;
@@ -13,9 +13,9 @@ public class User {
     private String address3;
     private String image;
 
-    public User(String email, String fullName, String password, String conPassword, String phone, String mobile, String address1, String address2, String address3, String image) {
+    public User(String email, String fullname, String password, String conPassword, String phone, String mobile, String address1, String address2, String address3, String image) {
         this.email = email;
-        this.fullName = fullName;
+        this.fullname = fullname;
         this.password = password;
         this.conPassword = conPassword;
         this.phone = phone;
@@ -34,12 +34,12 @@ public class User {
         this.email = email;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
     public String getPassword() {

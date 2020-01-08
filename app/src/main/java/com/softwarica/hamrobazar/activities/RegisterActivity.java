@@ -12,15 +12,13 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.softwarica.hamrobazar.R;
 import com.softwarica.hamrobazar.api.UsersAPI;
 import com.softwarica.hamrobazar.model.User;
 import com.softwarica.hamrobazar.serverresponse.ImageResponse;
-import com.softwarica.hamrobazar.serverresponse.SignUpResponse;
+import com.softwarica.hamrobazar.serverresponse.RegisterResponse;
 import com.softwarica.hamrobazar.strictmode.StrictModeClass;
 import com.softwarica.hamrobazar.url.Url;
 
@@ -36,10 +34,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
-
-    private ImageView imgBack;
+    
     private CircleImageView imgProfile;
-    private EditText etEmail, etfullName, etPassword, etconPassword, etPhone, etMobile, etAddress1, etAddress2, etAddress3;
+    private EditText etEmail, etFullName, etPassword, etConPassword, etPhone, etMobile, etAddress1, etAddress2, etAddress3;
     private Button btnRegister;
     String imagePath;
     private String imageName = "";
@@ -49,26 +46,17 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        imgBack = findViewById(R.id.imgBack);
+        imgProfile = findViewById(R.id.imgProfile);
         etEmail = findViewById(R.id.etEmail);
-        etfullName = findViewById(R.id.etfullName);
+        etFullName = findViewById(R.id.etFullName);
         etPassword = findViewById(R.id.etPassword);
-        etconPassword = findViewById(R.id.etConPassword);
+        etConPassword = findViewById(R.id.etConPassword);
         etPhone = findViewById(R.id.etPhone);
         etMobile = findViewById(R.id.etMobile);
         etAddress1 = findViewById(R.id.etAddress1);
         etAddress2 = findViewById(R.id.etAddress2);
         etAddress3 = findViewById(R.id.etAddress3);
-        imgProfile = findViewById(R.id.imgProfile);
-
         btnRegister = findViewById(R.id.btnRegister);
-
-        imgBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-            }
-        });
 
         imgProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,12 +64,11 @@ public class RegisterActivity extends AppCompatActivity {
                 BrowseImage();
             }
         });
-
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (etPassword.getText().toString().equals(etconPassword.getText().toString())) {
-                    if (validate()) {
+                if (etPassword.getText().toString().equals(etConPassword.getText().toString())) {
+                    if(validate()) {
                         saveImageOnly();
                         register();
                     }
@@ -96,10 +83,10 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private boolean validate() {
-        boolean status = true;
+        boolean status=true;
         if (etEmail.getText().toString().length() < 6) {
-            etEmail.setError("Minimum 6 character");
-            status = false;
+//            etEmail.setError("Minimum 6 character");
+            status=false;
         }
         return status;
     }
@@ -146,7 +133,7 @@ public class RegisterActivity extends AppCompatActivity {
         Call<ImageResponse> responseBodyCall = usersAPI.uploadImage(body);
 
         StrictModeClass.StrictMode();
-        //Synchronous method
+        //Synchronous methid
         try {
             Response<ImageResponse> imageResponseResponse = responseBodyCall.execute();
             imageName = imageResponseResponse.body().getFilename();
@@ -157,41 +144,40 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-        private void register() {
+    private void register() {
 
 
-            String email = etEmail.getText().toString();
-            String fullName = etfullName.getText().toString();
-            String password = etPassword.getText().toString();
-            String conpassword = etconPassword.getText().toString();
-            String phone = etPhone.getText().toString();
-            String mobile = etMobile.getText().toString();
-            String address1 = etAddress1.getText().toString();
-            String address2 = etAddress2.getText().toString();
-            String address3 = etAddress2.getText().toString();
 
-            User users = new User(email, fullName, password, conpassword, phone, mobile, address1, address2, address3, imageName);
+        String email = etEmail.getText().toString();
+        String fullname = etFullName.getText().toString();
+        String password = etPassword.getText().toString();
+        String conpassword = etConPassword.getText().toString();
+        String phone = etPhone.getText().toString();
+        String mobile = etMobile.getText().toString();
+        String address1 = etAddress1.getText().toString();
+        String address2 = etAddress2.getText().toString();
+        String address3 = etAddress3.getText().toString();
 
-            UsersAPI usersAPI = Url.getInstance().create(UsersAPI.class);
-            Call<SignUpResponse> signUpCall = usersAPI.registerUser(users);
+        User users = new User(email, fullname, password, conpassword, phone, mobile, address1, address2, address3, imageName);
 
-            signUpCall.enqueue(new Callback<SignUpResponse>() {
-                @Override
-                public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
-                    if (!response.isSuccessful()) {
-                        Toast.makeText(RegisterActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    Toast.makeText(RegisterActivity.this, "Registered", Toast.LENGTH_SHORT).show();
+        UsersAPI usersAPI = Url.getInstance().create(UsersAPI.class);
+        Call<RegisterResponse> registerCall = usersAPI.registerUser(users);
+
+        registerCall.enqueue(new Callback<RegisterResponse>() {
+            @Override
+            public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(RegisterActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
+                    return;
                 }
+                Toast.makeText(RegisterActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
+            }
 
-                @Override
-                public void onFailure(Call<SignUpResponse> call, Throwable t) {
-                    Toast.makeText(RegisterActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+            @Override
+            public void onFailure(Call<RegisterResponse> call, Throwable t) {
+                Toast.makeText(RegisterActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
-
-
+}

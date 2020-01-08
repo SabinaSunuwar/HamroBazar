@@ -110,7 +110,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etfullName"
+            android:id="@+id/etFullName"
             android:layout_width="308dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
