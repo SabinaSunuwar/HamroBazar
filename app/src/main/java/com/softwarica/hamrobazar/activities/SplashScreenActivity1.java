@@ -8,22 +8,22 @@ import android.os.Handler;
 
 import com.softwarica.hamrobazar.R;
 
-public class SplashScreenActivity extends AppCompatActivity {
+public class SplashScreenActivity1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
+        setContentView(R.layout.activity_splash_screen1);
 
         // Using a thread and halt screen for 2 seconds
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreenActivity.this, TermsAndConditionActivity.class);
+                Intent intent = new Intent(SplashScreenActivity1.this, DashboardActivity.class);
                 startActivity(intent);
                 finish();
             }
-        }, 1000);
+        }, 2000);
     }
 }
