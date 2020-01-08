@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.softwarica.hamrobazar.R;
@@ -45,21 +46,22 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-        private void login() {
-            String email = etEmail.getText().toString();
-            String password = etPassword.getText().toString();
+    private void login() {
+        String email = etEmail.getText().toString();
+        String password = etPassword.getText().toString();
 
-            LoginBLL loginBLL = new LoginBLL();
+        LoginBLL loginBLL = new LoginBLL();
 
-            StrictModeClass.StrictMode();
-            if (loginBLL.checkUser(email, password)) {
-                Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
-                startActivity(intent);
-                finish();
-            } else {
-                Toast.makeText(this, "Either email or password is incorrect", Toast.LENGTH_SHORT).show();
-                etEmail.requestFocus();
-            }
+        StrictModeClass.StrictMode();
+        if (loginBLL.checkUser(email, password)) {
+            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Toast.makeText(this, "Either email or password is incorrect", Toast.LENGTH_SHORT).show();
+            etEmail.requestFocus();
+        }
 
     }
 }
+

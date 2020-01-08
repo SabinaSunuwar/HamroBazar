@@ -20,7 +20,7 @@ public interface UsersAPI {
 
     @FormUrlEncoded
     @POST("users/login")
-    Call<RegisterResponse> checkUser(@Field("username") String username, @Field("password") String password);
+    Call<RegisterResponse> checkUser(@Field("email") String username, @Field("password") String password);
 
     @Multipart
     @POST("upload")
