@@ -2,14 +2,21 @@ package com.softwarica.hamrobazar.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.softwarica.hamrobazar.R;
 import com.softwarica.hamrobazar.adapter.imgSliderAdapter;
@@ -129,4 +136,7 @@ public class DashboardActivity extends AppCompatActivity {
 
 
     }
+
+
+
 }
