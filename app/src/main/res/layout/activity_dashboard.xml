@@ -32,15 +32,16 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_menu_black_24dp" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgLogin"
             android:layout_width="44dp"
             android:layout_height="41dp"
             android:layout_marginStart="6dp"
             android:layout_marginTop="8dp"
+            android:src="@drawable/ic_account_box_black_24dp"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_account_box_black_24dp" />
+            />
 
         <ImageView
             android:id="@+id/imgVer"
@@ -199,7 +200,7 @@
 
             <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                 android:id="@+id/refreshLayout"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="12dp"
@@ -207,7 +208,7 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/rvProduct"/>
 

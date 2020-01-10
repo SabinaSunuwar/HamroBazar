@@ -22,17 +22,18 @@
         <activity android:name=".activities.ViewPagerActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.DashboardActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".termsandconditions.PostingActivity" />
         <activity android:name=".termsandconditions.SafetyActivity" />
         <activity android:name=".termsandconditions.TermsActivity" />
         <activity android:name=".activities.TermsAndConditionActivity" />
         <activity android:name=".activities.SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity android:name=".activities.MainActivity" />

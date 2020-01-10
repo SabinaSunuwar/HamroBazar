@@ -3,6 +3,7 @@ package com.softwarica.hamrobazar.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -20,10 +21,23 @@ public class SplashScreenActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreenActivity.this, TermsAndConditionActivity.class);
-                startActivity(intent);
-                finish();
+                SharedPreferences sharedPreferences=getSharedPreferences("welcome",MODE_PRIVATE);
+                String terms=sharedPreferences.getString("terms","");
+                String safety=sharedPreferences.getString("safety","");
+                String ad=sharedPreferences.getString("ad","");
+
+                if ((terms.equals("checked")) && (safety.equals("checked")) &&(ad.equals("checked"))){
+                    Intent intent=new Intent(SplashScreenActivity.this,DashboardActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else {
+                    Intent intent=new Intent(SplashScreenActivity.this,TermsAndConditionActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
-        }, 1000);
+        },1000);
     }
 }
+

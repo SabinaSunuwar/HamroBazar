@@ -34,5 +34,7 @@ public interface UsersAPI {
     @GET("product")
     Call<List<Product>>getAllProducts();
 
+    @GET("users/me")
+    Call<User> getUserDetails(@Header("Authorization") String token);
 
 }
