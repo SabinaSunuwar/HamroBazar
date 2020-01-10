@@ -1,17 +1,24 @@
 package com.softwarica.hamrobazar.activities;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.content.CursorLoader;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.softwarica.hamrobazar.R;
@@ -38,8 +45,10 @@ public class RegisterActivity extends AppCompatActivity {
     private CircleImageView imgProfile;
     private EditText etEmail, etFullName, etPassword, etConPassword, etPhone, etMobile, etAddress1, etAddress2, etAddress3;
     private Button btnRegister;
+    private Spinner spinAddress3;
     String imagePath;
     private String imageName = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +64,18 @@ public class RegisterActivity extends AppCompatActivity {
         etMobile = findViewById(R.id.etMobile);
         etAddress1 = findViewById(R.id.etAddress1);
         etAddress2 = findViewById(R.id.etAddress2);
-        etAddress3 = findViewById(R.id.etAddress3);
+        spinAddress3 = findViewById(R.id.spinAddress3);
         btnRegister = findViewById(R.id.btnRegister);
+
+        String address3 [] = {"Select address", "Kathmandu", "Lalitpur", "Bhaktapur"};
+        ArrayAdapter adapter = new ArrayAdapter (
+                this,
+                android.R.layout.simple_list_item_1 ,
+                address3
+        );
+
+        spinAddress3.setAdapter(adapter);
+
 
         imgProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,6 +163,19 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
+
+    //for back button
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+
+                onBackPressed();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     private void register() {
 
 
@@ -156,7 +188,9 @@ public class RegisterActivity extends AppCompatActivity {
         String mobile = etMobile.getText().toString();
         String address1 = etAddress1.getText().toString();
         String address2 = etAddress2.getText().toString();
-        String address3 = etAddress3.getText().toString();
+        String address3 = spinAddress3.getSelectedItem().toString();
+
+
 
         User users = new User(email, fullname, password, conpassword, phone, mobile, address1, address2, address3, imageName);
 

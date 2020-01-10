@@ -245,8 +245,8 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/etAddress3"
+                <Spinner
+                    android:id="@+id/spinAddress3"
                     android:layout_width="308dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
